@@ -199,21 +199,17 @@
             text-decoration: none;
             font-weight: 600;
             transition: background-color 0.2s ease;
-            border: none;
-            cursor: pointer;
-            width: 100%;
             text-align: center;
         }
 
         .play-button:hover {
-            background-color: var(--apple-indigo);
+            background-color: #0062cc;
         }
 
         /* Categories Section */
         .categories-section {
+            padding: 3rem 0;
             background-color: var(--apple-white);
-            padding: 4rem 0;
-            margin-top: 4rem;
         }
 
         .category-grid {
@@ -224,8 +220,8 @@
 
         .category-card {
             background-color: var(--apple-gray6);
-            padding: 2rem;
             border-radius: 12px;
+            padding: 2rem;
             text-align: center;
             transition: transform 0.3s ease;
         }
@@ -235,91 +231,149 @@
         }
 
         .category-icon {
-            font-size: 2rem;
+            font-size: 2.5rem;
             margin-bottom: 1rem;
-            color: var(--apple-blue);
         }
 
         .category-title {
             font-size: 1.2rem;
             font-weight: 600;
             margin-bottom: 0.5rem;
-            color: var(--apple-black);
         }
 
-        .category-count {
+        .category-description {
             font-size: 0.9rem;
             color: var(--apple-gray);
+            margin-bottom: 1rem;
+        }
+
+        .category-link {
+            color: var(--apple-blue);
+            text-decoration: none;
+            font-weight: 500;
+        }
+
+        /* Call to Action */
+        .cta-section {
+            background-color: var(--apple-blue);
+            color: var(--apple-white);
+            padding: 4rem 0;
+            text-align: center;
+            margin: 3rem 0;
+        }
+
+        .cta-title {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .cta-description {
+            font-size: 1.1rem;
+            opacity: 0.9;
+            max-width: 600px;
+            margin: 0 auto 2rem;
+        }
+
+        .cta-button {
+            display: inline-block;
+            background-color: var(--apple-white);
+            color: var(--apple-blue);
+            padding: 1rem 2rem;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: background-color 0.2s ease, transform 0.2s ease;
+        }
+
+        .cta-button:hover {
+            background-color: #f2f2f7;
+            transform: scale(1.05);
         }
 
         /* Footer */
         footer {
-            background-color: var(--apple-white);
-            padding: 2rem 0;
-            text-align: center;
-            margin-top: 4rem;
-            border-top: 1px solid var(--apple-gray5);
+            background-color: var(--apple-black);
+            color: var(--apple-white);
+            padding: 3rem 0;
         }
 
-        .footer-content {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 20px;
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+        }
+
+        .footer-column h3 {
+            font-size: 1.2rem;
+            margin-bottom: 1.5rem;
+            color: var(--apple-white);
         }
 
         .footer-links {
-            display: flex;
-            justify-content: center;
-            gap: 2rem;
-            margin-bottom: 1rem;
+            list-style: none;
         }
 
         .footer-link {
-            color: var(--apple-gray);
+            margin-bottom: 0.8rem;
+        }
+
+        .footer-link a {
+            color: var(--apple-gray3);
             text-decoration: none;
+            transition: color 0.2s ease;
+        }
+
+        .footer-link a:hover {
+            color: var(--apple-white);
+        }
+
+        .footer-bottom {
+            margin-top: 3rem;
+            text-align: center;
+            color: var(--apple-gray3);
             font-size: 0.9rem;
         }
 
-        .footer-link:hover {
-            color: var(--apple-blue);
+        /* New Badge */
+        .new-badge {
+            background-color: var(--apple-green);
+            color: white;
+            font-size: 0.7rem;
+            padding: 0.2rem 0.5rem;
+            border-radius: 10px;
+            margin-left: 0.5rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            display: inline-block;
+            vertical-align: middle;
         }
 
-        .copyright {
-            color: var(--apple-gray);
-            font-size: 0.9rem;
-        }
-
-        /* Responsive Design */
+        /* Responsive */
         @media (max-width: 768px) {
             .nav-container {
                 flex-direction: column;
-                gap: 1rem;
+                padding: 1rem;
             }
-
+            
+            .nav-logo {
+                margin-bottom: 1rem;
+            }
+            
             .nav-links {
-                flex-wrap: wrap;
-                justify-content: center;
+                width: 100%;
+                justify-content: space-around;
             }
-
+            
             h1 {
-                font-size: 2rem;
+                font-size: 2.5rem;
             }
-
+            
             .section-title {
-                font-size: 1.5rem;
+                font-size: 1.8rem;
             }
-
-            .game-grid {
-                grid-template-columns: 1fr;
-            }
-
-            .category-grid {
-                grid-template-columns: 1fr;
-            }
-
-            .footer-links {
-                flex-direction: column;
-                gap: 1rem;
+            
+            .cta-title {
+                font-size: 2rem;
             }
         }
     </style>
@@ -331,10 +385,8 @@
             <a href="/" class="nav-logo">FatGames</a>
             <div class="nav-links">
                 <a href="/" class="nav-link active">Home</a>
-                <a href="/categories" class="nav-link">Categories</a>
-                <a href="#" class="nav-link">Popular</a>
-                <a href="#" class="nav-link">New Games</a>
-                <a href="#" class="nav-link">About</a>
+                <a href="/all-games.html" class="nav-link">All Games</a>
+                <a href="/categories.html" class="nav-link">Categories</a>
             </div>
         </div>
     </nav>
@@ -342,12 +394,11 @@
     <!-- Header -->
     <header>
         <div class="container">
-            <h1>Welcome to FatGames</h1>
-            <p class="tagline">Your ultimate destination for free online games. Play anywhere, anytime!</p>
+            <h1>Play Free Games Online</h1>
+            <p class="tagline">Discover hundreds of free games to play directly in your browser. No downloads, no installations, just pure fun!</p>
         </div>
     </header>
 
-    <!-- Main Content -->
     <main>
         <div class="container">
             <!-- Featured Games -->
@@ -355,64 +406,58 @@
             <div class="game-grid">
                 <!-- Word Fishing -->
                 <div class="game-card">
-                    <img src="https://placehold.co/600x400" alt="Word Fishing" class="game-image">
+                    <img src="images/games-original/word-fishing.svg" alt="Word Fishing" class="game-image">
                     <div class="game-content">
-                        <h3 class="game-title">Word Fishing</h3>
-                        <p class="game-description">Dive into the ocean of words! Catch fish by forming words and expand your vocabulary in this exciting word game.</p>
+                        <h3 class="game-title">Word Fishing <span class="new-badge">New</span></h3>
+                        <p class="game-description">Dive into an ocean of vocabulary! Catch fish by forming words and expand your vocabulary.</p>
                         <div class="game-tags">
-                            <span class="tag">Word Game</span>
                             <span class="tag">Puzzle</span>
                             <span class="tag">Educational</span>
-                        </div>
-                        <a href="/games/word-fishing.html" class="play-button">Play Now</a>
-                    </div>
-                </div>
-
-                <!-- Vortex 9 -->
-                <div class="game-card">
-                    <img src="https://placehold.co/600x400" alt="Vortex 9" class="game-image">
-                    <div class="game-content">
-                        <h3 class="game-title">Vortex 9</h3>
-                        <p class="game-description">Navigate through a mesmerizing vortex of challenges! Test your reflexes and strategic thinking in this action-packed game.</p>
-                        <div class="game-tags">
-                            <span class="tag">Action</span>
-                            <span class="tag">Shooting</span>
-                            <span class="tag">Arcade</span>
-                        </div>
-                        <a href="/games/vortex-9.html" class="play-button">Play Now</a>
-                    </div>
-                </div>
-
-                <!-- Space Race (Coming Soon) -->
-                <div class="game-card">
-                    <img src="https://placehold.co/600x400" alt="Space Race" class="game-image">
-                    <div class="game-content">
-                        <h3 class="game-title">Space Race</h3>
-                        <p class="game-description">Race through the cosmos in this thrilling space adventure! Coming soon to FatGames.</p>
-                        <div class="game-tags">
-                            <span class="tag">Racing</span>
-                            <span class="tag">Space</span>
-                            <span class="tag">Coming Soon</span>
-                        </div>
-                        <a href="#" class="play-button" style="background-color: var(--apple-gray);">Coming Soon</a>
-                    </div>
-                </div>
-
-                <!-- Word Master (Coming Soon) -->
-                <div class="game-card">
-                    <img src="https://placehold.co/600x400" alt="Word Master" class="game-image">
-                    <div class="game-content">
-                        <h3 class="game-title">Word Master</h3>
-                        <p class="game-description">Challenge your word knowledge in this exciting new word game! Coming soon to FatGames.</p>
-                        <div class="game-tags">
                             <span class="tag">Word Game</span>
-                            <span class="tag">Puzzle</span>
-                            <span class="tag">Coming Soon</span>
                         </div>
-                        <a href="#" class="play-button" style="background-color: var(--apple-gray);">Coming Soon</a>
+                        <a href="games/word-fishing.html" class="play-button">Play Now</a>
+                    </div>
+                </div>
+
+                <!-- 2048 -->
+                <div class="game-card">
+                    <img src="images/games-original/2048.svg" alt="2048" class="game-image">
+                    <div class="game-content">
+                        <h3 class="game-title">2048</h3>
+                        <p class="game-description">Merge identical numbers to get the 2048 tile! A simple yet addictive puzzle game.</p>
+                        <div class="game-tags">
+                            <span class="tag">Puzzle</span>
+                            <span class="tag">Strategy</span>
+                            <span class="tag">Numbers</span>
+                        </div>
+                        <a href="games/2048.html" class="play-button">Play Now</a>
+                    </div>
+                </div>
+
+                <!-- Flappy Bird -->
+                <div class="game-card">
+                    <img src="images/games-original/flappy-bird.svg" alt="Flappy Bird" class="game-image">
+                    <div class="game-content">
+                        <h3 class="game-title">Flappy Bird</h3>
+                        <p class="game-description">Control a bird through pipes without touching them. Simple but extremely challenging!</p>
+                        <div class="game-tags">
+                            <span class="tag">Arcade</span>
+                            <span class="tag">Action</span>
+                            <span class="tag">Casual</span>
+                        </div>
+                        <a href="games/flappy-bird.html" class="play-button">Play Now</a>
                     </div>
                 </div>
             </div>
+
+            <!-- Call to Action -->
+            <section class="cta-section">
+                <div class="container">
+                    <h2 class="cta-title">Discover More Games</h2>
+                    <p class="cta-description">We have hundreds of free games waiting for you to play. Browse our collection and find your next favorite game!</p>
+                    <a href="/all-games.html" class="cta-button">View All Games</a>
+                </div>
+            </section>
 
             <!-- Categories Section -->
             <section class="categories-section">
@@ -420,45 +465,28 @@
                     <h2 class="section-title">Browse by Category</h2>
                     <div class="category-grid">
                         <div class="category-card">
-                            <div class="category-icon">🎮</div>
-                            <h3 class="category-title">Action Games</h3>
-                            <p class="category-count">1 game available</p>
-                            <a href="/category/action.html" class="play-button">Browse</a>
-                        </div>
-                        
-                        <div class="category-card">
                             <div class="category-icon">🧩</div>
                             <h3 class="category-title">Puzzle Games</h3>
-                            <p class="category-count">1 game available</p>
-                            <a href="/category/puzzle.html" class="play-button">Browse</a>
+                            <p class="category-description">Challenge your brain, solve puzzles, and test your intelligence and strategic thinking.</p>
+                            <a href="/all-games.html?category=puzzle" class="category-link">Browse Games</a>
                         </div>
-                        
                         <div class="category-card">
-                            <div class="category-icon">🎯</div>
-                            <h3 class="category-title">Shooting Games</h3>
-                            <p class="category-count">1 game available</p>
-                            <a href="/category/shooting.html" class="play-button">Browse</a>
+                            <div class="category-icon">🏃‍♂️</div>
+                            <h3 class="category-title">Action Games</h3>
+                            <p class="category-description">Fast-paced games that test your reflexes and hand-eye coordination.</p>
+                            <a href="/all-games.html?category=action" class="category-link">Browse Games</a>
                         </div>
-                        
                         <div class="category-card">
-                            <div class="category-icon">📚</div>
-                            <h3 class="category-title">Word Games</h3>
-                            <p class="category-count">1 game available</p>
-                            <a href="/category/word-games.html" class="play-button">Browse</a>
+                            <div class="category-icon">⚽</div>
+                            <h3 class="category-title">Sports Games</h3>
+                            <p class="category-description">Experience various sports, from football to basketball, and showcase your athletic skills.</p>
+                            <a href="/all-games.html?category=sports" class="category-link">Browse Games</a>
                         </div>
-                        
-                        <div class="category-card">
-                            <div class="category-icon">🏎️</div>
-                            <h3 class="category-title">Racing Games</h3>
-                            <p class="category-count">0 games available</p>
-                            <a href="/category/racing.html" class="play-button">Browse</a>
-                        </div>
-                        
                         <div class="category-card">
                             <div class="category-icon">🗺️</div>
                             <h3 class="category-title">Adventure Games</h3>
-                            <p class="category-count">0 games available</p>
-                            <a href="/category/adventure.html" class="play-button">Browse</a>
+                            <p class="category-description">Explore new worlds, solve mysteries, and experience engaging storylines.</p>
+                            <a href="/all-games.html?category=adventure" class="category-link">Browse Games</a>
                         </div>
                     </div>
                 </div>
@@ -468,15 +496,42 @@
 
     <!-- Footer -->
     <footer>
-        <div class="footer-content">
-            <div class="footer-links">
-                <a href="#" class="footer-link">About Us</a>
-                <a href="#" class="footer-link">Contact</a>
-                <a href="#" class="footer-link">Privacy Policy</a>
-                <a href="#" class="footer-link">Terms of Service</a>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-column">
+                    <h3>FatGames</h3>
+                    <ul class="footer-links">
+                        <li class="footer-link"><a href="/">Home</a></li>
+                        <li class="footer-link"><a href="/all-games.html">All Games</a></li>
+                        <li class="footer-link"><a href="/categories.html">Categories</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>Popular Categories</h3>
+                    <ul class="footer-links">
+                        <li class="footer-link"><a href="/all-games.html?category=puzzle">Puzzle Games</a></li>
+                        <li class="footer-link"><a href="/all-games.html?category=action">Action Games</a></li>
+                        <li class="footer-link"><a href="/all-games.html?category=sports">Sports Games</a></li>
+                        <li class="footer-link"><a href="/all-games.html?category=adventure">Adventure Games</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>About Us</h3>
+                    <ul class="footer-links">
+                        <li class="footer-link"><a href="#">About FatGames</a></li>
+                        <li class="footer-link"><a href="#">Contact Us</a></li>
+                        <li class="footer-link"><a href="#">Privacy Policy</a></li>
+                        <li class="footer-link"><a href="#">Terms of Service</a></li>
+                    </ul>
+                </div>
             </div>
-            <p class="copyright">© 2024 FatGames. All rights reserved.</p>
+            <div class="footer-bottom">
+                <p>&copy; 2025 FatGames. All rights reserved.</p>
+            </div>
         </div>
     </footer>
+
+    <!-- Game Data Script -->
+    <script src="js/game-data.js"></script>
 </body>
-</html> 
+</html>

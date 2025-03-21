@@ -1,0 +1,452 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Game Categories - FatGames | Browse Games by Category</title>
+    <meta name="description" content="Browse our collection of free online games by category. Find action games, puzzle games, shooting games, and more at FatGames!">
+    <link rel="canonical" href="https://fatgames.shop/categories" />
+    <style>
+        /* Reset CSS */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        /* Apple-inspired color scheme */
+        :root {
+            --apple-blue: #007AFF;
+            --apple-indigo: #5856D6;
+            --apple-purple: #AF52DE;
+            --apple-pink: #FF2D55;
+            --apple-red: #FF3B30;
+            --apple-orange: #FF9500;
+            --apple-yellow: #FFCC00;
+            --apple-green: #34C759;
+            --apple-teal: #5AC8FA;
+            --apple-cyan: #32ADE6;
+            --apple-gray: #8E8E93;
+            --apple-gray2: #AEAEB2;
+            --apple-gray3: #C7C7CC;
+            --apple-gray4: #D1D1D6;
+            --apple-gray5: #E5E5EA;
+            --apple-gray6: #F2F2F7;
+            --apple-black: #000000;
+            --apple-white: #FFFFFF;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+            line-height: 1.6;
+            color: var(--apple-black);
+            background-color: var(--apple-gray6);
+            padding: 0;
+            margin: 0;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        header {
+            background-color: var(--apple-blue);
+            color: var(--apple-white);
+            padding: 2rem 0;
+            text-align: center;
+            margin-bottom: 2rem;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            font-weight: 700;
+        }
+
+        h2 {
+            font-size: 1.8rem;
+            margin: 1.5rem 0 1rem;
+            color: var(--apple-blue);
+            border-bottom: 2px solid var(--apple-gray4);
+            padding-bottom: 0.5rem;
+        }
+
+        .category-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .category-card {
+            background-color: var(--apple-white);
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .category-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        .category-image {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            display: block;
+        }
+
+        .category-content {
+            padding: 1.5rem;
+        }
+
+        .category-title {
+            font-size: 1.4rem;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+            color: var(--apple-black);
+        }
+
+        .category-description {
+            font-size: 1rem;
+            color: var(--apple-gray);
+            margin-bottom: 1rem;
+        }
+
+        .game-count {
+            font-size: 0.9rem;
+            color: var(--apple-blue);
+            margin-bottom: 1rem;
+        }
+
+        .browse-button {
+            display: inline-block;
+            background-color: var(--apple-blue);
+            color: var(--apple-white);
+            padding: 0.8rem 1.5rem;
+            border-radius: 24px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: background-color 0.2s ease;
+            border: none;
+            cursor: pointer;
+        }
+
+        .browse-button:hover {
+            background-color: var(--apple-indigo);
+        }
+
+        .category-stats {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 1rem;
+            padding-top: 1rem;
+            border-top: 1px solid var(--apple-gray5);
+            font-size: 0.9rem;
+            color: var(--apple-gray);
+        }
+
+        .popular-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            margin-top: 0.5rem;
+        }
+
+        .tag {
+            background-color: var(--apple-gray6);
+            padding: 0.3rem 0.8rem;
+            border-radius: 15px;
+            font-size: 0.8rem;
+            color: var(--apple-gray);
+        }
+
+        .back-to-home {
+            display: inline-block;
+            margin-bottom: 2rem;
+            color: var(--apple-blue);
+            text-decoration: none;
+            font-weight: 500;
+        }
+
+        .back-to-home:hover {
+            text-decoration: underline;
+        }
+
+        /* Responsive design */
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2rem;
+            }
+            
+            h2 {
+                font-size: 1.5rem;
+            }
+            
+            .container {
+                padding: 10px;
+            }
+            
+            .category-grid {
+                grid-template-columns: 1fr;
+                gap: 1.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>Game Categories</h1>
+            <p>Browse our collection of free online games by category</p>
+        </div>
+    </header>
+    
+    <main class="container">
+        <a href="/" class="back-to-home">← Back to Home</a>
+        
+        <div class="category-grid">
+
+    <div class="category-card">
+        <div class="category-image" style="background-color: #FF3B30;"></div>
+        <div class="category-content">
+            <h3 class="category-title">Action Games</h3>
+            <p class="category-description">Fast-paced games that test your reflexes and timing. Battle enemies, complete missions, and become the ultimate action hero!</p>
+            <div class="game-count">1 game available</div>
+            <div class="popular-tags">
+                <span class="tag">Action</span>
+<span class="tag">Shooting</span>
+<span class="tag">Arcade</span>
+            </div>
+            <div class="category-stats">
+                <span>Most played: Vortex 9</span>
+                <span>Newest: Vortex 9</span>
+            </div>
+            <a href="/category/action.html" class="browse-button">Browse Action Games</a>
+        </div>
+    </div>
+    
+
+    <div class="category-card">
+        <div class="category-image" style="background-color: #007AFF;"></div>
+        <div class="category-content">
+            <h3 class="category-title">Puzzle Games</h3>
+            <p class="category-description">Challenge your mind with brain-teasing puzzles. Solve mysteries, complete patterns, and test your problem-solving skills!</p>
+            <div class="game-count">1 game available</div>
+            <div class="popular-tags">
+                <span class="tag">Word Game</span>
+<span class="tag">Puzzle</span>
+<span class="tag">Educational</span>
+            </div>
+            <div class="category-stats">
+                <span>Most played: Word Fishing</span>
+                <span>Newest: Word Fishing</span>
+            </div>
+            <a href="/category/puzzle.html" class="browse-button">Browse Puzzle Games</a>
+        </div>
+    </div>
+    
+
+    <div class="category-card">
+        <div class="category-image" style="background-color: #FF9500;"></div>
+        <div class="category-content">
+            <h3 class="category-title">Shooting Games</h3>
+            <p class="category-description">Take aim and fire! Experience intense shooting action with various weapons and challenging targets.</p>
+            <div class="game-count">1 game available</div>
+            <div class="popular-tags">
+                <span class="tag">Action</span>
+<span class="tag">Shooting</span>
+<span class="tag">Arcade</span>
+            </div>
+            <div class="category-stats">
+                <span>Most played: Vortex 9</span>
+                <span>Newest: Vortex 9</span>
+            </div>
+            <a href="/category/shooting.html" class="browse-button">Browse Shooting Games</a>
+        </div>
+    </div>
+    
+
+    <div class="category-card">
+        <div class="category-image" style="background-color: #34C759;"></div>
+        <div class="category-content">
+            <h3 class="category-title">Word Games</h3>
+            <p class="category-description">Expand your vocabulary and have fun with word-based challenges. Perfect for language lovers!</p>
+            <div class="game-count">1 game available</div>
+            <div class="popular-tags">
+                <span class="tag">Word Game</span>
+<span class="tag">Puzzle</span>
+<span class="tag">Educational</span>
+            </div>
+            <div class="category-stats">
+                <span>Most played: Word Fishing</span>
+                <span>Newest: Word Fishing</span>
+            </div>
+            <a href="/category/word-games.html" class="browse-button">Browse Word Games</a>
+        </div>
+    </div>
+    
+
+    <div class="category-card">
+        <div class="category-image" style="background-color: #FF2D55;"></div>
+        <div class="category-content">
+            <h3 class="category-title">Racing Games</h3>
+            <p class="category-description">Get behind the wheel and experience the thrill of high-speed racing action!</p>
+            <div class="game-count">0 games available</div>
+            <div class="popular-tags">
+                <span class="tag">Racing</span>
+<span class="tag">Space</span>
+<span class="tag">Coming Soon</span>
+            </div>
+            <div class="category-stats">
+                <span>Most played: Coming Soon</span>
+                <span>Newest: Coming Soon</span>
+            </div>
+            <a href="/category/racing.html" class="browse-button">Browse Racing Games</a>
+        </div>
+    </div>
+    
+
+    <div class="category-card">
+        <div class="category-image" style="background-color: #AF52DE;"></div>
+        <div class="category-content">
+            <h3 class="category-title">Adventure Games</h3>
+            <p class="category-description">Embark on epic journeys and explore fascinating worlds in our adventure games collection.</p>
+            <div class="game-count">0 games available</div>
+            <div class="popular-tags">
+                
+            </div>
+            <div class="category-stats">
+                <span>Most played: Coming Soon</span>
+                <span>Newest: Coming Soon</span>
+            </div>
+            <a href="/category/adventure.html" class="browse-button">Browse Adventure Games</a>
+        </div>
+    </div>
+    
+</div>
+                <div class="category-content">
+                    <h3 class="category-title">Action Games</h3>
+                    <p class="category-description">Fast-paced games that test your reflexes and timing. Battle enemies, complete missions, and become the ultimate action hero!</p>
+                    <div class="game-count">2 games available</div>
+                    <div class="popular-tags">
+                        <span class="tag">Combat</span>
+                        <span class="tag">Adventure</span>
+                        <span class="tag">Platform</span>
+                    </div>
+                    <div class="category-stats">
+                        <span>Most played: Vortex 9</span>
+                        <span>Newest: Coming Soon</span>
+                    </div>
+                    <a href="#" class="browse-button">Browse Action Games</a>
+                </div>
+            </div>
+
+            <!-- Puzzle Games -->
+            <div class="category-card">
+                <div class="category-image" style="background-color: var(--apple-blue);"></div>
+                <div class="category-content">
+                    <h3 class="category-title">Puzzle Games</h3>
+                    <p class="category-description">Challenge your mind with brain-teasing puzzles. Solve mysteries, complete patterns, and test your problem-solving skills!</p>
+                    <div class="game-count">1 game available</div>
+                    <div class="popular-tags">
+                        <span class="tag">Logic</span>
+                        <span class="tag">Word Games</span>
+                        <span class="tag">Strategy</span>
+                    </div>
+                    <div class="category-stats">
+                        <span>Most played: Word Fishing</span>
+                        <span>Newest: Coming Soon</span>
+                    </div>
+                    <a href="#" class="browse-button">Browse Puzzle Games</a>
+                </div>
+            </div>
+
+            <!-- Shooting Games -->
+            <div class="category-card">
+                <div class="category-image" style="background-color: var(--apple-orange);"></div>
+                <div class="category-content">
+                    <h3 class="category-title">Shooting Games</h3>
+                    <p class="category-description">Take aim and fire! Experience intense shooting action with various weapons and challenging targets.</p>
+                    <div class="game-count">1 game available</div>
+                    <div class="popular-tags">
+                        <span class="tag">FPS</span>
+                        <span class="tag">Space</span>
+                        <span class="tag">Arcade</span>
+                    </div>
+                    <div class="category-stats">
+                        <span>Most played: Vortex 9</span>
+                        <span>Newest: Coming Soon</span>
+                    </div>
+                    <a href="#" class="browse-button">Browse Shooting Games</a>
+                </div>
+            </div>
+
+            <!-- Word Games -->
+            <div class="category-card">
+                <div class="category-image" style="background-color: var(--apple-green);"></div>
+                <div class="category-content">
+                    <h3 class="category-title">Word Games</h3>
+                    <p class="category-description">Expand your vocabulary and have fun with word-based challenges. Perfect for language lovers!</p>
+                    <div class="game-count">1 game available</div>
+                    <div class="popular-tags">
+                        <span class="tag">Vocabulary</span>
+                        <span class="tag">Educational</span>
+                        <span class="tag">Casual</span>
+                    </div>
+                    <div class="category-stats">
+                        <span>Most played: Word Fishing</span>
+                        <span>Newest: Coming Soon</span>
+                    </div>
+                    <a href="#" class="browse-button">Browse Word Games</a>
+                </div>
+            </div>
+
+            <!-- Coming Soon Categories -->
+            <div class="category-card">
+                <div class="category-image" style="background-color: var(--apple-purple);"></div>
+                <div class="category-content">
+                    <h3 class="category-title">Adventure Games</h3>
+                    <p class="category-description">Embark on epic journeys and explore fascinating worlds in our upcoming adventure games collection.</p>
+                    <div class="game-count">Coming Soon</div>
+                    <div class="popular-tags">
+                        <span class="tag">RPG</span>
+                        <span class="tag">Story</span>
+                        <span class="tag">Exploration</span>
+                    </div>
+                    <div class="category-stats">
+                        <span>Status: In Development</span>
+                        <span>Release: TBA</span>
+                    </div>
+                    <a href="#" class="browse-button" style="background-color: var(--apple-gray);">Coming Soon</a>
+                </div>
+            </div>
+
+            <div class="category-card">
+                <div class="category-image" style="background-color: var(--apple-pink);"></div>
+                <div class="category-content">
+                    <h3 class="category-title">Racing Games</h3>
+                    <p class="category-description">Get behind the wheel and experience the thrill of high-speed racing action!</p>
+                    <div class="game-count">Coming Soon</div>
+                    <div class="popular-tags">
+                        <span class="tag">Speed</span>
+                        <span class="tag">Sports</span>
+                        <span class="tag">Competition</span>
+                    </div>
+                    <div class="category-stats">
+                        <span>Status: In Development</span>
+                        <span>Release: TBA</span>
+                    </div>
+                    <a href="#" class="browse-button" style="background-color: var(--apple-gray);">Coming Soon</a>
+                </div>
+            </div>
+        </div>
+    </main>
+</body>
+</html> 
